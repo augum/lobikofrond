@@ -1,0 +1,141 @@
+<ion-header>
+    <ion-toolbar [color]="networkStatus && networkStatus.connected ?'primary':'danger'">
+        <ion-back-button slot="start"></ion-back-button>
+        <ion-buttons slot="end" >
+          <ion-menu-button ><ion-icon name="more"></ion-icon></ion-menu-button>
+        </ion-buttons>
+      <ion-title > {{title}} </ion-title>
+      </ion-toolbar>
+      <ion-toolbar color="primary" *ngIf="networkStatus && networkStatus.connected == true">
+            <ion-button color="danger" shape="round" slot="start" (click)="creerHopital()" *ngIf="buttonPlus==0">
+              <ion-icon name="add"></ion-icon>
+            </ion-button>
+            <ion-button color="danger" shape="round" slot="start" (click)="retour()" *ngIf="buttonPlus==1">
+                 <ion-icon name="arrow-round-back"></ion-icon>
+            </ion-button>
+        </ion-toolbar>
+</ion-header>
+<ion-content>
+<div  *ngIf="networkStatus && networkStatus.connected == true">
+  <div *ngIf="listHopitaux==0">
+    <ion-segment [(ngModel)]='selectedView'>
+      <ion-segment-button value='proche' (click)=" afficherHopP()">
+        <ion-label>Proche de moi</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value='Autres'>
+          <ion-label>Autres</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <div [ngSwitch]="selectedView" >
+        <div *ngSwitchCase="'proche'">
+            <ion-card *ngFor="let ambulance of ambulancesP">
+                <ion-card-header>
+                    <ion-card-title>
+                      {{ambulance.nom}}
+                    </ion-card-title>
+               </ion-card-header>
+
+               <ion-card-content>
+                 <ion-item>
+                    {{ambulance.adresse}}
+                 </ion-item>
+                 <ion-item>
+                    Appeler
+                      <div  slot="end">
+                          <ion-button color="success" (click)="appelleR(ambulance.telephone)">
+                              <ion-icon slot="end" name="call"></ion-icon>
+                          </ion-button>
+                      </div>
+                  </ion-item>
+               </ion-card-content>
+             </ion-card>
+          <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+            <ion-infinite-scroll-content
+                    loadingSpinner="bubbles"
+                    loadingText="Chargement...">
+            </ion-infinite-scroll-content>
+          </ion-infinite-scroll>
+        </div>
+        <div *ngSwitchCase="'Autres'">
+            <ion-toolbar color="secondary">
+                <ion-grid>
+                    <ion-row>
+                      <ion-col size="9" size-sm>
+                          <ion-searchbar animated="true" [(ngModel)]="kw"  showCancelButton placeholder="Ville"></ion-searchbar>
+                      </ion-col>
+                      <ion-col size="3" size-sm>
+                          <ion-button shape="round"  (click)="afficherHop(kw)"><ion-icon name="search"></ion-icon></ion-button>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-toolbar>
+          <ion-card *ngFor="let ambulance of ambulances" >
+            <ion-card-header>
+                <ion-card-title>
+                  {{ambulance.nom}}
+                </ion-card-title>
+           </ion-card-header>
+
+           <ion-card-content>
+             <ion-item>
+                {{ambulance.adresse}}
+             </ion-item>
+             <ion-item>
+                Appeler
+                  <div  slot="end">
+                      <ion-button color="success" (click)="appelleR(ambulance.telephone)">
+                          <ion-icon slot="end" name="call"></ion-icon>
+                      </ion-button>
+                  </div>
+              </ion-item>
+           </ion-card-content>
+         </ion-card>
+         <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+            <ion-infinite-scroll-content
+                    loadingSpinner="bubbles"
+                    loadingText="Chargement...">
+            </ion-infinite-scroll-content>
+          </ion-infinite-scroll>
+        </div>
+    </div>
+  </div>
+  <div *ngIf="listHopitaux==1">
+       <ion-item>
+          <ion-label position="floating" >Nom:</ion-label>
+          <ion-input type="text" [(ngModel)]="ambulance.nom" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating" >Téléphone:</ion-label>
+          <ion-input type="text" [(ngModel)]="ambulance.telephone" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating" >Adresse :</ion-label>
+          <ion-textarea [(ngModel)]="ambulance.adresse" ></ion-textarea>
+        </ion-item>
+    <ion-button expand="block" fill="outline"(click)="enregistrer(ambulance)">Enregistrer</ion-button>
+  </div>
+  </div>
+  <div *ngIf="networkStatus && networkStatus.connected == false" >
+    <ion-card *ngFor="let ambulance of ambulancesP">
+        <ion-card-header>
+            <ion-card-title>
+              {{ambulance.nom}}
+            </ion-card-title>
+       </ion-card-header>
+
+       <ion-card-content>
+         <ion-item>
+            {{ambulance.adresse}}
+         </ion-item>
+         <ion-item>
+            Appeler
+              <div  slot="end">
+                  <ion-button color="success" (click)="appelleR(ambulance.telephone)">
+                      <ion-icon slot="end" name="call"></ion-icon>
+                  </ion-button>
+              </div>
+          </ion-item>
+       </ion-card-content>
+     </ion-card>
+  </div>
+</ion-content>

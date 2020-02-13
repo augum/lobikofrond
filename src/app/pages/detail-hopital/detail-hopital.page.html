@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-toolbar color="danger">
+        <ion-buttons slot="end">
+            <ion-back-button (click)="retour()"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Infos sur {{data.nom}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="padding" *ngIf="data" >
+    <ion-card >
+        <ion-card-header>
+            <ion-card-title>
+                {{ data.nom }}
+            </ion-card-title>
+            <ion-card-subtitle>
+
+            </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content >
+            <ion-label>Adresse:</ion-label>
+            <ion-item>
+                {{data.adresse}}
+            </ion-item>
+            <ion-label>Services organisés</ion-label>
+              <ion-card>
+                <ion-card-content>
+                    {{data.service}}
+               </ion-card-content>
+              </ion-card>
+            <ion-item>
+              Contact:
+                <div  slot="end">
+                    <ion-button color="success" (click)="appelleRMed(data.telephone)">
+                        <ion-icon slot="end" name="call"></ion-icon>
+                    </ion-button>
+                    <ion-button color="success"(click)="sendSms()">
+                        <ion-icon slot="end" name="mail"></ion-icon>
+                    </ion-button>
+                </div>
+            </ion-item>
+           Email: <a>{{ data.mail }}</a>
+        </ion-card-content>
+    </ion-card>
+    <ion-grid *ngIf="isSms==true">
+      <ion-row>
+         <ion-col size="9"><ion-textarea type="text" [(ngModel)]="Sms" placeholder="Votre message ici"></ion-textarea></ion-col>
+          <ion-col size="3">
+            <ion-button shape="full" (click)="smsMed(data.telephone)">
+                <ion-icon slot="icon-only" name="send"></ion-icon>
+            </ion-button>
+          </ion-col>
+      </ion-row>
+    </ion-grid >
+  </ion-content>

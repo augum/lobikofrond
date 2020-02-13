@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap');
+
+.container{
+  background: #E5E5E5;
+}
+.icon{
+  position: absolute;
+  width: 135px;
+  height: 177px;
+  left: 119px;
+  top: 203px;
+  background: url(../assets/img/image.png);
+}
+.lobiko{
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 36px;
+/* identical to box height */
+  color: #FFFFFF;
+}
