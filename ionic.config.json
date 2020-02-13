@@ -1,0 +1,8 @@
+{
+  "name": "makulobiko",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}
