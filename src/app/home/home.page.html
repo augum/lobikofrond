@@ -1,70 +1,38 @@
-<ion-header>
-    <ion-toolbar >
-        <ion-buttons slot="start" >
-            <img src="/assets/img/logo.png">
-          </ion-buttons>
-      <ion-title *ngIf="networkStatus" [color]="networkStatus && networkStatus.connected ?'primary':'danger'">{{networkStatus.connected ?'Online':'Offline'}}</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content >
-    <p><img src="/assets/img/homeText.svg" ></p>
-    <img src="/assets/img/trouve.svg" >
-    <ion-grid>
-      <ion-row>
-        <ion-col size="4">
-          <ion-button  (click)=" medecin()" class="homecard" fill="outline">
-            <img src="/assets/img/medecin.png">
-          </ion-button>
+<div class="app">
+  <header class="header">
+    <img class="logo" src="/assets/img/logo.png">
+    <span class="status">
+    </span>
+  </header>
 
-        </ion-col>
-        <ion-col size="4">
-          <ion-button class="homered" fill="outline" routerLink="/hopital" >
-            <img src="/assets/img/phar.png">
-          </ion-button>
-        </ion-col>
-       <ion-col size="4">
-           <ion-button class="homephar" fill="outline" routerLink="/pharmacie">
-             <ion-icon name="thumbs-up"></ion-icon>
-           </ion-button>
-       </ion-col>
-      </ion-row>
-    </ion-grid>
-    <ion-grid>
-      <ion-row>
-        <ion-col size="4" >
-          <ion-button  routerLink="/ambulance" class="homecard" fill="outline" >
-            <ion-icon name="thumbs-up"></ion-icon>
-          </ion-button>
-        </ion-col>
-        <ion-col size="4" >
-          <ion-button  fill="outline" class="homered" routerLink="/banquedesang">
-            <ion-icon name="thumbs-up"></ion-icon>
-          </ion-button>
-        </ion-col>
-       <ion-col size="4">
-           <ion-button class="homephar" fill="outline" color="primary" (click)="sharing()" >
-             <ion-icon name="share"></ion-icon>
-           </ion-button>
-       </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-content>
-  <ion-footer>
-  <ion-toolbar>
-    <ion-grid>
-      <ion-row>
-        <ion-col size="4">
-          <ion-button shape="round" fill="outline" color="primary" routerLink="/apropos" ><ion-icon name="information-circle"></ion-icon></ion-button>
-        </ion-col>
-        <ion-col size="4" *ngFor="let l of likes" >
-          <ion-button shape="round" fill="outline" (click)="jaime(l)" color="primary"><ion-icon name="thumbs-up"></ion-icon></ion-button>
-        </ion-col>
-       <ion-col size="4">
-           <ion-button shape="round" fill="outline" color="primary" (click)="sharing()" >
-             <ion-icon name="share"></ion-icon>
-           </ion-button>
-       </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-toolbar>
-  </ion-footer>
+  <section class="section">
+    <div class="content-text">
+      <h2>La sante a votre
+        Proximité. </h2>
+      <span>
+        Trouvez un Médecin spécialiste, un Hôpital
+        ou une Pharmacie ou une Banque de sang
+      </span>
+    </div>
+    <div class="search">
+      <svg class="search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+          stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M21 21L16.65 16.65" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <input type="text" name="search" placeholder="Faites une recherche">
+    </div>
+    <div class="card">
+      <div class="text">
+        <p>Sélectionnez
+          une option</p>
+      </div>
+      <div class="content">
+
+      </div>
+    </div>
+  </section>
+  <footer></footer>
+</div>

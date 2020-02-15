@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap');
+// .avatar{
+// position: absolute;
+// width: 114px;
+// height: 138px;
+// left: 32px;
+// top: 377px;
+
+// background: #576DB3;
+// border-radius: 20px;
+// }
+// .vector{
+// position: absolute;
+// left: 10.96%;
+// right: 10.96%;
+// top: 0%;
+// bottom: 0%;
+
+// background: #FFFFFF;
+// }
+// .medecinTxt{
+//   position: absolute;
+// width: 72px;
+// height: 18px;
+// left: 53px;
+// top: 483px;
+
+// font-family: 'Montserrat', sans-serif;
+// font-style: normal;
+// font-weight: bold;
+// font-size: 18px;
+// line-height: 18px;
+// /* identical to box height */
+
+
+// color: #FFFFFF;
+// }
+// .titre{
+//   position: absolute;
+// width: 275px;
+// height: 72px;
+// left: 20px;
+// top: 88px;
+
+// font-family: Montserrat Bold;
+// font-style: normal;
+// font-weight: bold;
+// font-size: 36px;
+// line-height: 36px;
+
+// color: #132569;
+// }
+// .apropos{
+// position: absolute;
+// width: 60px;
+// height: 14px;
+// left: 106px;
+// top: 607px;
+
+// ont-family: 'Montserrat', sans-serif;
+// font-style: normal;
+// font-weight: bold;
+// font-size: 14px;
+// line-height: 14px;
+// /* identical to box height */
+// color: #000000;
+// }
+// .rectangle{
+//   position: absolute;
+// width: 136px;
+// height: 50px;
+// left: 42px;
+// top: 589px;
+
+// background: #FFFFFF;
+// border: 1px solid #C4C4C4;
+// box-sizing: border-box;
+// border-radius: 18px;
+// }
+// .homecard{
+// //position: absolute;
+//  width: 85px;
+//  height: 118px;
+// //left: 32px;
+// //top: 377px;
+// background: #576DB3;
+// border-radius: 10px;
+// }
+// .homered{
+//  //position: absolute;
+//  width: 85px;
+//  height: 118px;
+// //left: 160px;
+// //top: 377px;
+// background: #C92325;
+// border-radius: 10px;
+// }
+// .homephar{
+//  //position: absolute;
+//  width: 85px;
+//  height: 118px;
+// //left: 160px;
+// //top: 377px;
+// background: #051C9A;
+// border-radius: 10px;
+// }
+// .comp{
+//   position: absolute;
+// left: 53.07%;
+// right: 26.42%;
+// top: 53.41%;
+// bottom: 0.3%;
+
+// background: #FFFFFF;
+// }
+// .cap1{
+// left: 0.05%;
+// right: 46.24%;
+// top: 33.6%;
+// bottom: 0%;
+
+// background: #FFFFFF;
+// }
+// .cap2{
+//   position: absolute;
+// left: 33.19%;
+// right: 0.06%;
+// top: 0%;
+// bottom: 45.86%;
+
+// background: #FFFFFF;
+// }
+
+
+.header {
+  background: white;
+  right: 0;
+  left: 0;
+}
+.header .header-content {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px !important;
+}
+.header .header-content .logo {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 63px;
+  height: 38px;
+  left: 0px;
+  top: 16px;  
+}
+.header .header-content .status {
+  position: absolute;
+  top: 16px;
+  width: 15px;
+  height: 15px;
+  left: 335px;
+  top: 26px;
+  background: #09B543; 
+  border-radius: 100%;
+}
+
+.content .content-text h2{
+  position: fixed;
+  width: 275px;
+  height: 72px;
+  left: 20px;
+  top: 58px;
+
+  font-family: Nexa Bold;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 36px;
+  color: #132569;
+}
+.content .content-text p{
+  position: absolute;
+  width: 279px;
+  height: 28px;
+  left: 20px;
+  top: 94px;
+  
+  font-family: Nexa Light;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 14px;
+  
+  color: #000000;
+}
+.content .search{
+  position: absolute;
+  display: flex;
+
+  width: 279px;
+  height: 88px;
+  left: 20px;
+  top: 164px;
+}
+.content .search input{
+  width: 319px;
+  height: 41px;
+  background: #E5E5E5;
+  border-radius: 50px;
+}
+.content .search input::placeholder{
+  width: 139px;
+  height: 14px;
+  right: 12px;
+  font-family: Nexa Light;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 14px;
+  padding-right: 8px !important;
+  color: #686767;
+}
+.content .search .search-icon{
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 9px;
+  top:7px;
+  border-radius: 50px;
+}
+
