@@ -98,6 +98,47 @@
         color: #132569;
 
       }
+
+      .card-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        overflow: scroll;
+        margin-top: 24px;
+        padding-bottom: 5px;
+
+        &::-webkit-scrollbar {
+          background: transparent;
+        }
+
+        .card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          min-width: 114px;
+          max-width: 114px;
+          height: 138px;
+          margin: 0 15px;
+          // left: 32px;
+          // background: #576DB3;
+          border-radius: 20px;
+
+          span {
+            font-family: Nexa Bold;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 18px;
+            color: #FFFFFF;
+            padding-top: 20px;
+          }
+
+          img {
+            padding-top: 8px;
+          }
+        }
+      }
     }
   }
 }

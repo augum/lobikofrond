@@ -29,8 +29,12 @@
         <p>Sélectionnez
           une option</p>
       </div>
-      <div class="content">
-
+      <div class="card-content">
+        <div class="card" *ngFor="let category of categories; let i = index"
+          [ngStyle]="{'background-color':category.bg}">
+          <img [src]='category.icon'>
+          <span>{{category.name}}</span>
+        </div>
       </div>
     </div>
   </section>
