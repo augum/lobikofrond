@@ -15,13 +15,13 @@ export default [
     bg: "#051C9A"
   },
   {
-    name: "Pharmacie",
-    icon: "/assets/icon/pharmacy.svg",
-    bg: "#051C9A"
+    name: "Ambulance",
+    icon: "/assets/icon/ambulance.svg",
+    bg: "#085084"
   },
   {
-    name: "Pharmacie",
-    icon: "/assets/icon/pharmacy.svg",
-    bg: "#051C9A"
+    name: "B. de Sang",
+    icon: "/assets/icon/blood.svg",
+    bg: "#FF0000"
   }
 ];
