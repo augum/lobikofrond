@@ -1,27 +1,293 @@
-.bgc{
-  background:#c92325;
-  position:absolute;
-  left:0;
-  right: 0;
-  bottom: 5;
-  height: 100%;
-}
-.recherchebar{
-background: #E5E5E5;
-border-radius: 50px;
-}
-.item{
-  background: #E5E5E5;
-  border-radius: 10px;
-}
-.border{
-background: #FFFFFF;
-border-radius: 20px;
-}
-.custom-skeleton ion-skeleton-text {
-  line-height: 13px;
-}
+.medecin{
+  background-color: #E5E5E5;
+  height: 100vh;
 
-.custom-skeleton ion-skeleton-text:last-child {
-  margin-bottom: 5px;
+  .header {
+    background-color: white;
+    width: 375px;
+    height: 226px;
+    border-radius: 0px 0px 50px 50px;
+
+   .header-content{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 18px 12px;
+
+      .back{
+        width: 24px;
+        height: 24px;
+        left: 6px;
+        top: 28px;
+      }
+      
+      .text {
+        font-family: Nexa Bold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 18px;
+        color: #403F3F;
+      }
+    }
+
+    .search{
+      .search-form {
+        padding-top: 42px;
+        padding-left: 14px;
+        input {
+          width: 340px;
+          height: 41px;
+          left: 25px;
+          top: 230px;
+          background: #E5E5E5;
+          border-radius: 50px;
+          border: none;
+        }
+        input::placeholder {
+          font-family: Nexa Light;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 18px;
+          line-height: 14px;
+          color: #686767;
+          padding-left: 46px;
+        }
+  
+        input.TextInput {
+          padding-left: 10px;
+        }
+  
+        .search-icon {
+          width: 24px;
+          height: 24px;
+          position: absolute;
+          margin-top: 6px;
+          margin-left: 12px;
+        }
+      }
+    }
+
+  }
+  
+  .content{
+    .content-text{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px;
+    }
+    .content-text .h1{
+      font-family: Nexa Bold;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 18px;
+      color: #000000;
+    }
+
+    .symptomes-card{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      overflow: scroll;
+      margin-top: 24px;
+      padding-bottom: 5px;
+
+      &::-webkit-scrollbar {
+        background: transparent;
+      }
+
+      .items{
+        display: flex;
+          flex-direction: column;
+          align-items: center;
+          min-width: 64px;
+          max-width: 64px;
+          height: 66px;
+          margin: 0 9px;
+          // left: 32px;
+          // background: #576DB3;
+          border-radius: 20px;
+
+          span {
+            font-family: Nexa Bold;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 10px;
+            line-height: 18px;
+            color: #FFFFFF;
+            padding-top: 4px;
+          }
+
+          img {
+            padding-top: 8px;
+          }
+      }
+    }
+
+    .textMedecin{
+      display:flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 10px;
+
+     h1{
+        font-family: Nexa Bold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 18px;
+      }
+      button{
+        background-color: #F2171A;
+        width: 65px;
+        height: 30px;
+        border-radius: 8%;
+        color: white;
+        padding: 10 10;
+        cursor: pointer;
+      }
+    }
+
+    .Topmedecin{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      overflow: scroll;
+      margin: 10px;
+      .medecin{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background: #E5E5E5;
+        padding-left: 4px;
+        border-radius: 10px;
+      }
+      .medecin .photo {
+        width: 80px;
+        height: 80px;
+        padding-right: 0px;
+      }
+      .medecin .photo img{
+        border-radius: 10%;
+      }
+      .medecin .author{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 170px;
+        height: 90px;
+      }
+      .medecin .author .identite .a{ 
+        font-family: Nexa Bold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;        
+        color: #000000;
+      }
+      
+      .medecin .author .identite .b{ 
+        font-family: Nexa Bold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 8px;
+        color: #686767;
+      }
+      .medecin .author .identite .c{ 
+        font-family: Nexa Bold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 8px;
+        color: #000000;
+      }
+      .medecin .author .identite .btn{
+        width: 80px;
+        height: 20px;
+        background-color: #39A3F0;
+        border-radius: 6px;
+        margin-top: 4px;
+      } 
+      .medecin .author .identite .btn span{
+        font-family: Nexa Bold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 6px;
+        color: #FFFFFF;
+        padding: 10px;
+      } 
+  }
+    
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px 30px;
+
+    .about {
+      width: 136px;
+      height: 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1px solid #C4C4C4;
+      box-sizing: border-box;
+      border-radius: 18px;
+
+      img {
+        width: 40px;
+        height: 38px;
+      }
+
+      span {
+        font-family: Nexa Bold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 14px;
+        color: #000000;
+      }
+    }
+
+    .shared {
+      width: 136px;
+      height: 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1px solid #C4C4C4;
+      box-sizing: border-box;
+      border-radius: 18px;
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+
+      span {
+        font-family: Nexa Bold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 14px;
+        color: #000000;
+        padding-left: 6px
+      }
+    }
+  }
+
+
 }

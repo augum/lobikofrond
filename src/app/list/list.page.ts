@@ -9,6 +9,8 @@ import {Plugins,NetworkStatus,PluginListenerHandle} from "@capacitor/core";
 const {Network} = Plugins;
 import{Platform} from '@ionic/angular';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import symptomes from '../../symptomes';
+import medecin from '../../medecin';
 
 
 @Component({
@@ -17,6 +19,8 @@ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
   styleUrls: ['list.page.scss']
 })
 export class ListPage implements OnInit {
+symptomes : Array<any>;
+medecin : Array<any>;
 public medecins;
 public listMed: number = 0;
 public buttonPlus: number = 0;
@@ -29,6 +33,8 @@ public likes;
 
   constructor(public platform:Platform,private route: Router,public medecinService: MedecinService,public toastctrl:ToastController
   ,private socialSharing: SocialSharing,private likeService:LikeService) {
+    this.symptomes = symptomes;
+    this.medecin = medecin;
     this.medM = {} as MedecinModel;
 
     /*this.subscribe = this.platform.backButton(async ()=>{
@@ -49,6 +55,7 @@ public likes;
    console.log(this.networkStatus);*/
    this.like();
    this.offline();
+   console.log(this.medecin, "=== symptomes loading")
   }
 
   async offline(){

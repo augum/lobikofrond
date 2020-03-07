@@ -31,7 +31,7 @@
       </div>
       <div class="card-content">
         <div class="card" *ngFor="let category of categories; let i = index"
-          [ngStyle]="{'background-color':category.bg}">
+          [ngStyle]="{'background-color':category.bg}"  (click)=" medecin()">
           <img [src]='category.icon'>
           <span>{{category.name}}</span>
         </div>
