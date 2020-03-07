@@ -24,6 +24,13 @@
       background-color: green;
       border-radius: 50%;
     }
+    .statusoff {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background-color: red;
+      border-radius: 50%;
+    }
   }
 
   .section {
@@ -89,7 +96,7 @@
       .text {
         width: 132px;
         height: 36px;
-        margin-top: 46px;
+        margin-top: 36px;
       }
 
       .text p {

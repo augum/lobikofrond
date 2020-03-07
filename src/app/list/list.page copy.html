@@ -177,3 +177,62 @@
   </ion-grid>
 </ion-toolbar>
 </ion-footer>
+<ion-content >
+  <div *ngIf="listMed==0">
+     <div *ngIf="medecins">
+       <ion-list *ngFor="let medecin of medecins" >
+         <ion-item class="item" (click)="DetailMed(medecin)">
+           <ion-avatar (click)="DetailMed(medecin)" slot="start">
+              <img src="/assets/img/med.jpg">
+           </ion-avatar>
+           <ion-label>
+           <h3>DR.{{medecin.nom}}</h3>
+          </ion-label>
+          <ion-icon name="eye" slot="end" (click)="DetailMed(medecin)"></ion-icon>
+        </ion-item>
+       </ion-list >
+     </div>
+     <div *ngIf="!medecins">
+       <div class="ion-padding custom-skeleton">
+         <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+         <ion-skeleton-text animated></ion-skeleton-text>
+         <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+         <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+         <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+       </div>
+           <ion-list>
+             <ion-list-header>
+               <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+             </ion-list-header>
+             <ion-item>
+               <ion-avatar slot="start">
+                 <ion-skeleton-text animated></ion-skeleton-text>
+               </ion-avatar>
+               <ion-label>
+                 <h3>
+                   <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+                 </h3>
+                 <p>
+                   <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+                 </p>
+                 <p>
+                   <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+                 </p>
+               </ion-label>
+             </ion-item>
+           </ion-list>
+     </div>
+  </div>
+  <div *ngIf="listMed==1">
+    <ion-item>
+      <ion-label position="floating" >Nom:</ion-label>
+      <ion-input type="text" [(ngModel)]="medM.nom" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" >Prenom:</ion-label>
+      <ion-input type="text" [(ngModel)]="medM.prenom" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" >Postnom:</ion-label>
+      <ion-input type="text" [(ngModel)]="medM.postnom" ></ion-input>
+    </ion-item>

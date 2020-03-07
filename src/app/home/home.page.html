@@ -1,17 +1,17 @@
 <div class="app">
   <header class="header">
     <img class="logo" src="/assets/img/logo.png">
-    <span class="status">
+    <span [class]="networkStatus && networkStatus.connected ?'status':'statusoff'">
     </span>
   </header>
 
   <section class="section">
     <div class="content-text">
-      <h2>La sante a votre
+      <h2>La santé à votre
         Proximité. </h2>
       <span>
-        Trouvez un Médecin spécialiste, un Hôpital
-        ou une Pharmacie ou une Banque de sang
+        Trouvez un Médecin spécialiste, un Hôpital,
+        une Pharmacie ou une Banque de sang
       </span>
     </div>
     <div class="search">
@@ -32,21 +32,11 @@
       <div class="card-content">
         <div class="card" *ngFor="let category of categories; let i = index"
           [ngStyle]="{'background-color':category.bg}"  (click)=" medecin()">
-          <img [src]='category.icon'>
+          <img [src]='category.icon' routerLink="{{category.url}}">
           <span>{{category.name}}</span>
         </div>
       </div>
     </div>
   </section>
-  <footer class="footer">
-    <div class="about">
-      <img src="/assets/icon/logo.svg">
-      <span> A propos</span>
-    </div>
 
-    <div class="shared">
-      <img src="/assets/icon/share.svg">
-      <span>Partager</span>
-    </div>
-  </footer>
 </div>
