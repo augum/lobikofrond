@@ -47,7 +47,7 @@
     "jquery": "^3.4.1",
     "mx.ferreyra.callnumber": "0.0.2",
     "rxjs": "~6.5.1",
-    "sharp": "^0.23.2",
+    "sharp": "^0.30.5",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
   },
